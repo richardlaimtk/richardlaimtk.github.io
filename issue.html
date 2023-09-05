@@ -1,0 +1,34 @@
+<!DOCTYPE html> 
+<html> 
+<body> 
+
+<button onclick="playVid()" type="button">Play Video</button>
+<button onclick="pauseVid()" type="button">Pause Video</button><br> 
+
+<video id="myVideo" >
+  <source src="trailer_had_issues.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+<script> 
+var count = 1;
+var vid = document.getElementById("myVideo"); 
+
+document.getElementById('myVideo').addEventListener('ended', function () {
+    if (count < 5) {
+        vid.play();
+        count++;
+    }
+}, false);
+
+function playVid() { 
+  vid.play(); 
+} 
+
+function pauseVid() { 
+  vid.pause(); 
+} 
+</script> 
+
+</body> 
+</html>
